@@ -106,6 +106,7 @@
                 <h2>Apply Now</h2>
                 
                 <?php
+                // Display success or error messages
                 if (isset($_GET['status'])) {
                     if ($_GET['status'] === 'success') {
                         echo '<div class="form-message success">Thank you for your application! We\'ll review it and get back to you soon.</div>';
@@ -115,7 +116,7 @@
                 }
                 ?>
                 
-                <form action="application.php" method="POST" class="form-card" enctype="multipart/form-data">
+                <form action="process-application.php" method="POST" class="form-card" enctype="multipart/form-data">
                     <input type="hidden" id="position" name="position" value="">
                     
                     <div class="form-group">
