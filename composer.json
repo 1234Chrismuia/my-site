@@ -1,5 +1,10 @@
 {
     "require": {
         "php": "^7.3 || ^8.0"
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*"
     }
 }
