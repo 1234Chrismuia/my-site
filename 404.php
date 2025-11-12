@@ -16,7 +16,7 @@
     <div class="error404">
         <h1>404</h1>
         <p>Sorry, the page you're looking for cannot be found.</p>
-        <a href="index.html">Go Back Home</a>
+        <a href="index.php">Go Back Home</a>
     </div>
     <footer>
         <div class="footer-row">
