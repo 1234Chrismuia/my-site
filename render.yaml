@@ -4,3 +4,10 @@ services:
     env: php
     buildCommand: ""
     startCommand: "php -S 0.0.0.0:10000"
+    envVars:
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_USERNAME  
+        value: jessymuiaa@gmail.com
+      - key: SMTP_PASSWORD
+        value: tlbozjflsjukzwer
