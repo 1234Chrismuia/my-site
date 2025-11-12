@@ -1,14 +1,14 @@
 <?php
-// SMTP Configuration for Jespher Tech - GMAIL
+// SMTP Configuration for Render
 return [
-    'host' => 'smtp.gmail.com',
+    'host' => getenv('SMTP_HOST') ?: 'smtp.gmail.com',
     'smtp_auth' => true,
-    'username' => 'jessymuiaa@gmail.com', // Your Gmail address
-    'password' => 'tlbo zjfl sjuk zwer', // Your 16-character app password
+    'username' => getenv('SMTP_USERNAME') ?: 'jessymuiaa@gmail.com',
+    'password' => getenv('SMTP_PASSWORD') ?: 'tlbozjflsjukzwer',
     'secure' => 'tls',
     'port' => 587,
     'from_email' => 'noreply@jesphertech.com',
     'from_name' => 'Jespher Tech',
-    'reply_to' => 'jessymuiaa@gmail.com' // Your email for replies
+    'reply_to' => 'jessymuiaa@gmail.com'
 ];
 ?>
