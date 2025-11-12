@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Careers – Jespher Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Jespher Tech">
+                Jespher Tech
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.php" class="cta">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="careers-section">
+            <h1>Work With Us</h1>
+            <p class="careers-intro">Join Jespher Tech and shape the future of technology! We're looking for passionate individuals who want to make a difference.</p>
+            
+            <div class="job-openings">
+                <h2>Current Openings</h2>
+                <div class="job-list">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Frontend Developer</h3>
+                            <span class="job-location">Remote / Nairobi</span>
+                        </div>
+                        <div class="job-details">
+                            <span class="job-type">Full-time</span>
+                            <span class="job-department">Engineering</span>
+                        </div>
+                        <p>We're looking for a skilled Frontend Developer to join our team and help build amazing user experiences.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">CSS</span>
+                        </div>
+                        <a href="#apply" class="apply-btn" data-position="Frontend Developer">Apply Now</a>
+                    </div>
+                    
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Backend Engineer</h3>
+                            <span class="job-location">Nairobi</span>
+                        </div>
+                        <div class="job-details">
+                            <span class="job-type">Full-time</span>
+                            <span class="job-department">Engineering</span>
+                        </div>
+                        <p>Join our backend team to build scalable and secure APIs and services.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                        <a href="#apply" class="apply-btn" data-position="Backend Engineer">Apply Now</a>
+                    </div>
+                    
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>UX/UI Designer</h3>
+                            <span class="job-location">Remote</span>
+                        </div>
+                        <div class="job-details">
+                            <span class="job-type">Full-time</span>
+                            <span class="job-department">Design</span>
+                        </div>
+                        <p>Create beautiful and intuitive user interfaces for our web and mobile applications.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">UI Design</span>
+                            <span class="skill-tag">User Research</span>
+                        </div>
+                        <a href="#apply" class="apply-btn" data-position="UX/UI Designer">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <section id="apply" class="application-section">
+                <h2>Apply Now</h2>
+                
+                <?php
+                if (isset($_GET['status'])) {
+                    if ($_GET['status'] === 'success') {
+                        echo '<div class="form-message success">Thank you for your application! We\'ll review it and get back to you soon.</div>';
+                    } elseif ($_GET['status'] === 'error') {
+                        echo '<div class="form-message error">Sorry, there was an error submitting your application. Please try again.</div>';
+                    }
+                }
+                ?>
+                
+                <form action="application.php" method="POST" class="form-card" enctype="multipart/form-data">
+                    <input type="hidden" id="position" name="position" value="">
+                    
+                    <div class="form-group">
+                        <label for="applicant_name">Full Name *</label>
+                        <input type="text" id="applicant_name" name="applicant_name" placeholder="Your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="applicant_email">Email Address *</label>
+                        <input type="email" id="applicant_email" name="applicant_email" placeholder="Your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="applicant_phone">Phone Number</label>
+                        <input type="tel" id="applicant_phone" name="applicant_phone" placeholder="Your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="applicant_linkedin">LinkedIn Profile</label>
+                        <input type="url" id="applicant_linkedin" name="applicant_linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="applicant_resume">Resume/CV *</label>
+                        <input type="file" id="applicant_resume" name="applicant_resume" accept=".pdf,.doc,.docx" required>
+                        <small>Accepted formats: PDF, DOC, DOCX (Max: 5MB)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="applicant_message">Cover Letter *</label>
+                        <textarea id="applicant_message" name="applicant_message" placeholder="Tell us why you'd be great for this position and what excites you about Jespher Tech..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="agree_terms" required>
+                            I agree to the processing of my personal data according to the Privacy Policy
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Submit Application
+                        </button>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="benefits-section">
+                <h2>Why Work at Jespher Tech?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Flexible Work</h3>
+                        <p>Remote work options and flexible hours to support work-life balance</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Learning & Growth</h3>
+                        <p>Continuous learning opportunities and professional development</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Health & Wellness</h3>
+                        <p>Comprehensive health insurance and wellness programs</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Great Team</h3>
+                        <p>Collaborative environment with talented and supportive colleagues</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-row">
+            <div>
+                <img src="assets/images/logo.png" alt="Jespher Tech Logo" width="40">
+                <span>© 2025 Jespher Tech. All rights reserved.</span>
+            </div>
+            <div class="socials">
+                <a href="#"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+                <a href="#"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+    <script>
+        // Set position when apply button is clicked
+        document.querySelectorAll('.apply-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const position = this.getAttribute('data-position');
+                document.getElementById('position').value = position;
+                
+                // Scroll to application form
+                document.getElementById('apply').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
